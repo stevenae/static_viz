@@ -1,0 +1,180 @@
+% LaTeX file for resume 
+% This file uses the resume document class (res.cls)
+
+% all city - [1] 19.20 25.00 49.22, 2026
+
+\documentclass{res} 
+\usepackage[landscape]{geometry}
+\usepackage{array}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{enumerate}
+
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+%\usepackage{newcent}   % uses new century schoolbook postscript font 
+\newsectionwidth{8pt}  % So the text is not indented under section headings
+\setlength{\textheight}{10.2in} % set text height big enough for box
+\topmargin=-.75in       % to start box .5in from top of page
+\oddsidemargin=-.85in   % to start box .5in from left of page
+\newcommand{\tab}{\hspace*{2em}}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The following lines define \boxaround, used to draw a box on the page.
+% The parameter is the entire text of the resume. Must fit on one page!
+%
+% \boxaroundhmargin is the left & right margin around the text inside the box.
+% \boxaroundvmargin is the top & bottom margin around the text inside the box.
+% \boxrulethickness controls thickness of line used to draw the box.
+% You can change these 3 things in the lines below:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newdimen\boxrulethickness\newdimen\boxarounsedhmargin\newdimen\boxaroundvmargin
+\boxrulethickness=2pt        %controls thickness of line 
+%\boxaroundhmargin=30pt        % about a half inch
+\boxaroundvmargin=20pt        % to fit more text on page, make this smaller
+%%%%%%%%%%%%%%%%%%%%%%%%% Don't read this stuff %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hsize=10.5in \vsize=8.5in             % use bigger dimensions for box
+\newbox\MACboxA  \newdimen\MACdimenA
+% \borderandboxit is used inside \boxaround:
+\def\borderandboxit#1#2#3{\vbox{\hrule height#2\hbox{\vrule width#2\hskip#1\hskip-#2%
+  \vbox{\vskip#1\relax#3\vskip#1}\hskip#1\hskip-#2\vrule width#2}\hrule height#2}}
+%
+\long\def\boxaround#1{\vskip6pt
+  {\MACdimenA=\hsize \advance\MACdimenA by-\boxaroundhmargin
+   \advance\MACdimenA by-\boxaroundhmargin   % once for each side
+   \setbox\MACboxA=\hbox to \hsize{\hskip\boxaroundhmargin%\hss
+                     \vbox{\hsize=\MACdimenA
+                           \vskip\boxaroundvmargin #1
+                           \vskip\boxaroundvmargin}\hss}%
+   \borderandboxit{0pt}\boxrulethickness{\box\MACboxA}}%
+  \vskip2pt plus0pt minus0pt
+}
+%%%%%%%%%%%%%%%%%%%  End of \boxaround macro %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\boxaround{% put the text on the page inside a box  
+\centerline{\LARGE \bf Aggregate and Segmented Analysis}
+\smallskip
+\smallskip
+\centerline{\large Steven Ellis -- Company X Research}
+\begin{tabular}{>{\centering\arraybackslash}p{12cm} !{\vrule width 2pt} >{\centering\arraybackslash}p{14cm}}
+{
+\begin{minipage}{10cm}
+\section{Van Westendorp}
+The Van Westendorp Price Sensitivity Meter (VW PSM) is a market research technique for determining consumer price preferences. It is particularly useful for services and products which do not fit an extant market niche. Four questions are asked of potential customers: ``At what price per month would you consider [product / service] to be...
+\begin{enumerate}\itemsep-2pt
+\item so cheap that you would question the quality?"
+\item a bargain or a great buy for your money?"
+\item getting expensive but still worth consideration?"
+\item too expensive to consider?"
+\end{enumerate}
+\vspace{-3mm}
+\section{Using the Data}
+The below plot depicts the VW PSM for all of our target region. Note  point A, the 'lower price bound' (the intersection of the red ``too cheap" and green ``bargain" lines) as well as the point B, the 'upper price bound' (the intersection of the teal ``not expensive" and purple ``too expensive" lines). 
+\begin{minipage}{10cm}
+\pdfximage
+width 9 cm {aggregate.pdf}
+\pdfrefximage
+\pdflastximage
+
+\smallskip
+\end{minipage}\\
+Traditionally, one prices a service through one of these two strategies:
+\begin{enumerate}[I.]\itemsep-2pt
+\item Gain market share at the expense of profit by pricing between points A and B.
+\item Gain maximum profit at the expense of market share by pricing between points B and C.
+\end{enumerate}
+\vspace{-3mm}
+\section{Responses by Subset}
+Our product falls in Z spot. Tables to the right depict the VW PSM results from subsets A \& B.
+\end{minipage}
+}
+&
+{\begin{minipage}{12cm}
+\begin{center}
+\begin{tabular}{| l | llll | }
+\hline
+\multicolumn{5}{|c|}
+	{\rule[-3mm]{0mm}{7mm}Subset A} \\
+\hline
+Grouping	&Low Bound & Middle Intersect &Upper Bound&\emph{n} \\
+\hline		
+A1& a & b & c & d\\
+
+A2& a & b & c & d\\
+
+A3& a & b & c & d\\
+
+A4& a & b & c & d\\
+
+A5& a & b & c & d\\
+
+A6& a & b & c & d\\
+
+A7& a & b & c & d\\
+
+A8& a & b & c & d\\
+
+A9& a & b & c & d\\
+
+A10& a & b & c & d\\
+
+A11& a & b & c & d\\
+
+A12& a & b & c & d\\
+\hline
+\multicolumn{5}{c}{} \\
+\hline
+\multicolumn{5}{|c|}
+	{\rule[-3mm]{0mm}{7mm}Subset B} \\
+\hline
+Grouping		&Low Bound & Middle Intersect &Upper Bound&\emph{n} \\
+\hline		
+B1& a & b & c & d\\
+
+B2& a & b & c & d\\
+
+B3& a & b & c & d\\
+
+B4& a & b & c & d\\
+
+B5& a & b & c & d\\
+
+B6& a & b & c & d\\
+
+B7& a & b & c & d\\
+
+B8& a & b & c & d\\
+
+B9& a & b & c & d\\
+
+B10& a & b & c & d\\
+
+B11& a & b & c & d\\
+
+B12& a & b & c & d\\
+
+\hline
+\multicolumn{5}{c}{} \\
+\hline
+\multicolumn{5}{|c|}
+	{\rule[-3mm]{0mm}{7mm}Overall} \\
+\hline
+Subset A&x& y &z& q\\
+Subet B&x& y &z& q\\
+Total&x& y &z& q\\
+\hline
+\end{tabular}
+\\\
+\end{center}
+\end{minipage}
+}
+\end{tabular}
+\vfill} %    end the material being boxed.
+\end{document}
+
+
+
+
+
+
+
